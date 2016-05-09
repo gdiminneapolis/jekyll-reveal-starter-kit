@@ -1,0 +1,31 @@
+baseurl: "/jekyll-reveal-starter-kit" # the subpath of your site, e.g. /blog
+#url: "https://gdiminneapolis.github.io"
+title: Your Awesome Class
+author: Your Name
+description: |
+  Your awesome class in all it's glory.
+keywords:
+  - GDI
+  - GDIMpls
+  - Girl Develop It
+  - Class
+  - Awesome
+style: gdidefault
+syntax_style: zenburn
+
+contact:
+  name: GDI Minneapolis
+  web: http://gdiminneapolis.com
+  email: "minneapolis@girldevelopit.com"
+  twitter: "gdimpls"
+  github: "gdiminneapolis"
+
+
+collections:
+  - slides
+
+exclude:
+  - LICENSE
+  - README.md
+  - Outline.md
+  - Description.md
