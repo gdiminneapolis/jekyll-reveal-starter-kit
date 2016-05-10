@@ -1,6 +1,7 @@
 # jekyll-reveal-starter-kit
 
-A starting point for developing GDI slide sets using the reveal.js library and the jekyll static site generator
+A starting point for developing GDI slide sets using the reveal.js
+library and the jekyll static site generator.
 
 [Jekyll](http://jekyllrb.com) is a
 [static-site generator](https://en.wikipedia.org/wiki/Web_template_system#Static_page_generators)
@@ -9,8 +10,9 @@ typically used to generate blogs, but also used heavily by
 
 This starter kit allows the user to create a
 [RevealJS](http://lab.hakim.se/reveal-js/) slide set for a class. This
-particular version of reveal has been customized specifically by and
-for Girl Develop It to keep class materials consisten.
+particular version of reveal has
+[been customized](https://github.com/Cara-Jo/reveal.js) specifically
+by and for Girl Develop It to keep class materials consistent.
 
 The [GDIMpls Version](https://github.com/gdiminneapolis/reveal.js) of
 reveal is embedded in this starter kit as a
@@ -328,6 +330,23 @@ starter kit.
 
 ## Licensing
 
-This project is licensed as Creactive Commons Attribution
+This project is licensed as Creative Commons Attribution
 Non-commercial 3.0 Unported (CC BY-NC 3.0)
 <https://creativecommons.org/licenses/by-nc/3.0/>.
+
+## Author
+
+* [Tamara Temple](https://github.com/tamouse) of the
+  [GDI Minneapolis team](https://github.com/gdiminneapolis)
+
+## Thanks
+
+* The
+  [Jekyll team](https://github.com/jekyll/jekyll/graphs/contributors),
+  especiall parkr
+
+* [Hakim El Hattab](https://github.com/hakimel), creator of
+  `reveal.js`
+
+* [Cara Jo](https://github.com/Cara-Jo) of the
+  [GDI Boulder team](https://github.com/gdiboulder)
