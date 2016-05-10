@@ -1,13 +1,18 @@
-# Put configuration items needed exclusively for publishing
+# Put configuration items needed exclusively for publishing in this file.
 #
 # When performing the Jekyll build for publishing, include this file:
 #
 #   jekyll build --config=_config.yml,_config_publish.yml
 #
 
-
 # The URL portion is what is substituted in site.url
 # in the slides. By default, use the GDIMpls Github Pages
 # prefix, and the baseurl setting in _config.yml
 # for the repository name.
 url: "https://gdiminneapolis.github.io"
+
+# If you fork something from the GDIMpls repo into your own repo, and
+# use the same publish to Github track, your version will be availble
+# at the url "https://<yourgithub>.github.io/<repo-name/". This could
+# generate some confusion when contributing to the GDIMpls
+# repo. **BEWARE**

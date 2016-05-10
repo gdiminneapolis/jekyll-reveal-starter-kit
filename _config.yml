@@ -1,5 +1,9 @@
-# These are things you should customize for your class
+# You *MUST* change these two items:
 title: Your Awesome Class
+baseurl: "/jekyll-reveal-starter-kit"
+# ^ This is the path of the slide set below the site URL.
+
+# These are things you should customize for your class
 author: Your Name
 description: |
   Your awesome class in all it's glory.
@@ -18,19 +22,6 @@ contact:
   twitter: "gdimpls"
   github: "gdiminneapolis"
 
-# This is the path of the slide set below
-# the site URL. For development purposes,
-# the site URL is empty, but when the
-# site is published, it should have the
-# actual URL. The published URL should
-# be set in _publish_config.yml, and
-# when the publish step is done, include
-# both configurations like so:
-#
-#   jekyll build --config=_config.yml,_config_publish.yml
-#
-# Further info can be found in the README file.
-baseurl: "/jekyll-reveal-starter-kit"
 
 # There are a handful of styles available with reveal. They can be found in the
 # reveal.js/css/themes folder, and include:
