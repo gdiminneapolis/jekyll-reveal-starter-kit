@@ -56,7 +56,11 @@ collections:
   - slides
 
 exclude:
-  - LICENSE
-  - README.md
-  - Outline.md
+  - bin
+  - CONTRIBUTOR_COVENANT.md
   - Description.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - Outline.md
+  - README.md
