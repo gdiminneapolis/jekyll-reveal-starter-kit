@@ -99,3 +99,88 @@ baseurl: /my-awesome-course
 (Thus revealing whey the restriction on the name for your repository:
 it's used in the URL for the slide set when published on Github
 pages.)
+
+*Note:* the `baseurl` value **must** begin with a "/" character. Leave
+the end without a "/" character as well.
+
+## Spin up the Jekyll Server
+
+Everything should be good to go, now, and you can start up the Jekyll
+development server to show the slides while you create them.
+
+``` bash
+bin/jekyll serve
+```
+
+You may want to pay attention to the terminal window running the
+server, as that is where errors will be reported in case there's
+something amiss in your slides. Every time you modify a file in
+folder, jekyll will rebuild the site. Since there's not going to be a
+lot of slides, or other material, this generally is very fast.
+
+The server will show you the URL you can browse to locally to see the
+slides. With this initial starter kit set up, there's no
+live-reloading of changes, so you'll still need to refresh the slide
+page in the browser.
+
+## Creating the Slides
+
+Slides live in the `_slides` folder, and should be named with the
+following conventions:
+
+* start with a sequence number. By default, I've started the sequence
+  at 000 -- this allows up to 999 slides.
+* the slide title, lowercased, only letters, numbers, and dashes --
+  use dashes for spaces between words.
+* the extension `.html` (you can edit your slides in Markdown using
+  the `.md` extension.)
+
+For example, the introduction slide is:
+`_slides/000-introduction.html`.
+
+A very good practice is to leave gaps in the sequence number to make
+it easy to rearrange slides if you want, or insert conent as you'd
+like.
+
+## Slide Content
+
+### Frontmatter
+
+Frontmatter is a preamble of YAML settings at the start of every slide.
+
+Every slide needs to have at least the following frontmatter:
+
+``` yaml
+---
+layout: slide
+title: Slide Title
+---
+```
+
+After that point, you can provide the HTML that will make up your
+slide.
+
+In `reveal.js` whatever appears within a `<section>` tag is the body
+of the slide. The `slide` layout in the frontmatter provides this for
+you, so you can simply start on the content.
+
+For example, the standard "Welcome" slide has the following:
+
+``` html
+---
+layout: slide
+title: "Welcome!"
+---
+<div class="left-align">
+  <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+  <p class="green">Some "rules"</p>
+  <ul class="go-wide">
+    <li>We are here for you!</li>
+    <li>Every question is important</li>
+    <li>Help each other</li>
+    <li>Have fun</li>
+  </ul>
+</div>
+```
+
+which should be pretty easy to figure out.
