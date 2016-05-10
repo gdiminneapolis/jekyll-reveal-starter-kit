@@ -325,3 +325,9 @@ The project has a wiki at
 <https://github.com/gdiminneapolis/jekyll-reveal-starter-kit/wiki>
 where you can contribute wisdom and share information about using the
 starter kit.
+
+## Licensing
+
+This project is licensed as Creactive Commons Attribution
+Non-commercial 3.0 Unported (CC BY-NC 3.0)
+<https://creativecommons.org/licenses/by-nc/3.0/>.
