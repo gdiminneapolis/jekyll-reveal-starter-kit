@@ -293,6 +293,8 @@ git commit -m "publish"
 git push -u origin HEAD
 ```
 
+After a couple minutes, your site will be available on Github.
+
 ### Every time you want to publish
 
 Most of the previous steps settings will be intact in the `_site`
@@ -305,3 +307,21 @@ git commit -m "publish"
 git push -u origin HEAD
 cd ..
 ```
+
+## Contributing
+
+This project is intended to be a safe, welcoming space for
+collaboration, especially among members of Girl Develop It and it's
+various chapters. Contributors are expected to read and follow the
+[Contributor Covenant](CONTRIBUTOR_COVENANT.md) code of conduct.
+
+Feel free to fork this repo and make changes as you want. If you want
+to contribute back, submit a PR at
+<https://github.com/gdiminneapolis/jekyll-reveal-starter-kit/pulls>
+with your changes.  Bug reports, issues, questions, and suggestions
+are welcome at
+<https://github.com/gdiminneapolis/jekyll-reveal-starter-kit/issues>.
+The project has a wiki at
+<https://github.com/gdiminneapolis/jekyll-reveal-starter-kit/wiki>
+where you can contribute wisdom and share information about using the
+starter kit.
