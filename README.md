@@ -46,6 +46,13 @@ only lower-case letters, numbers, and dashes** in the filename. This
 will become part of an externally available URL, so the URL format
 must be valid.
 
+Initialize and update the git submodules:
+
+``` bash
+git submodule init
+git submodule update
+```
+
 Change the remote `origin` to `upstream`:
 
 ``` bash
