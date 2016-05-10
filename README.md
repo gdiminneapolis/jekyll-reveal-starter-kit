@@ -157,6 +157,8 @@ title: Slide Title
 ---
 ```
 
+### Slide Body
+
 After that point, you can provide the HTML that will make up your
 slide.
 
@@ -164,7 +166,7 @@ In `reveal.js` whatever appears within a `<section>` tag is the body
 of the slide. The `slide` layout in the frontmatter provides this for
 you, so you can simply start on the content.
 
-For example, the standard "Welcome" slide has the following:
+For example, the standard "Welcome" slide has the following content:
 
 ``` html
 ---
@@ -184,3 +186,41 @@ title: "Welcome!"
 ```
 
 which should be pretty easy to figure out.
+
+### Fragments
+
+If you want a slide to load in fragments, each `<section>` element you
+put in the slide body will be loaded with each step. (Not necessarily
+a good presentation practice, but a lot of people seem to use it.)
+
+### Code Snippets
+
+Since we're all about the code, you can place snippets on the slide by
+wrapping them with `<pre><code>` elements. These will be nicely
+formatted and syntax highlighted. To tell the highlighter what
+language syntax to use, give the `<code>` tag the appropriate `class`
+attribute:
+
+``` html
+<pre>
+  <code class="css">
+    h1 {
+      font-weight: bold;
+      text-size: 120%;
+    }
+  </code>
+</pre>
+```
+
+Make sure to keep your snippets short, so they stay on the slide
+nicely.
+
+### Helper Classes
+
+`reveal.js` seems to shorten boxes on some blocks, making ridiculous
+line breaks when the text would look a lot better all on one line.
+
+There are two helpers for this:
+
+* `go-wide` - sets the box width to 960px
+* `no-wrap` - forces the contents to never wrap on white spaces
