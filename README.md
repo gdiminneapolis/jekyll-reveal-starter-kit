@@ -46,13 +46,6 @@ only lower-case letters, numbers, and dashes** in the filename. This
 will become part of an externally available URL, so the URL format
 must be valid.
 
-Initialize and update the git submodules:
-
-``` bash
-git submodule init
-git submodule update
-```
-
 Change the remote `origin` to `upstream`:
 
 ``` bash
@@ -71,6 +64,20 @@ Go ahead and push the current initial version up to your new repo:
 ``` bash
 git push -u origin HEAD
 ```
+
+Initialize **and** update (both) the git submodule(s):
+
+``` bash
+git submodule init
+git submodule update
+```
+
+### Keep Git Up to Date
+
+Like with any other project, use git's features to maintain a good
+clean working tree and remote repository. When you want to start off
+on a new feature, or just try something out, create a branch. If it's
+what you want, merge it back in to master.
 
 ## Complete Installtion
 
@@ -231,3 +238,70 @@ There are two helpers for this:
 
 * `go-wide` - sets the box width to 960px
 * `no-wrap` - forces the contents to never wrap on white spaces
+
+## Build the Presentation
+
+To build the slide presentation for publication, *stop* the running
+`jekyll` server. Then at the command line, enter:
+
+``` bash
+bin/jekyll build --config=_config.yml,_config_publish.yml
+```
+
+This will build the presentation into the `_site` folder. You can open
+the presentation from there to see if it's as you want.
+
+## Publish the Presentation
+
+By default, everything we've done will allow us to easily publish
+slides and notes on Github pages. Follow these steps.
+
+### First time only
+
+We'll need the URL of the git remote origin (where we have been saving
+the slides). The following command on OS/X or Ubuntu will save it in a
+bash variable:
+
+``` bash
+ORG=$(git remote -v | grep origin | head -1 | awk '{print $2}')
+```
+
+Next, descend into the `_site` folder and run `git init`
+
+``` bash
+cd _site
+git init
+```
+
+Add the remote:
+
+``` bash
+git remote add origin $ORG
+```
+
+Set the branch to `gh-pages`:
+
+``` bash
+git checkout -b gh-pages
+```
+
+Now, add all the file, commit them, and push them up to the remote:
+
+``` bash
+git add --all -v
+git commit -m "publish"
+git push -u origin HEAD
+```
+
+### Every time you want to publish
+
+Most of the previous steps settings will be intact in the `_site`
+folder, so you should only need to do the following:
+
+``` bash
+cd _site
+git add --all -v
+git commit -m "publish"
+git push -u origin HEAD
+cd ..
+```
