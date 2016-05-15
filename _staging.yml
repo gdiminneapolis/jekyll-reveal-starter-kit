@@ -1,0 +1,11 @@
+# Put configuration items needed exclusively for staging in this repo.
+#
+# When performing the Jekyll build for staging, include this file:
+#
+#   jekyll build --config=_config.yml,_staging.yml
+#
+# The URL portion is what is substituted in site.url
+# in the slides. Change this accordingly.
+url: "https://YOUR_GITHUB_ACCOUNT.github.io"
+# Change this to the name of your repository. Make sure it starts with the forward slash "/"
+baseurl: "/jekyll-reveal-starter-kit"

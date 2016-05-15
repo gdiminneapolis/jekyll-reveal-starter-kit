@@ -33,46 +33,32 @@ installed:
 gem install bundler
 ```
 
+* [Hub](https://github.com/github/hub#installation)
+
+
+
 ## Starter Kit Installation
 
-To start a new set of class slides, or a new presentation, clone the
-[repo] to your local system:
+1. Download the zipped source files from github at `https://github.com/gdiminneapolis/jekyll-reveal-starter-kit/archive/master.zip` and save it someplace memorable.
 
-``` bash
-git clone https://github.com/gdiminneapolis/jekyll-reveal-starter-kit.git my-awesome-course
-```
+2. Create and/or go to the parent directory for your new slide set.
 
-where `my-awesome-course` is an empty directory you'll use to create
-your presentation. When you create the course name, remember to **use
-only lower-case letters, numbers, and dashes** in the filename. This
-will become part of an externally available URL, so the URL format
-must be valid.
+3. Unzip the zipped source you downloaded into the parent directory.
 
-Change the remote `origin` to `upstream`:
+4. Rename the newly created directory to the name you want for your Github repository.
 
-``` bash
-git remote rename origin upstream
-```
+5. Change into the new directory.
 
-Create the remote `origin` for this repository. Using the **SSH**
-version of the remote url, set the new `origin`;
+7. Run the setup script: `./setup.sh`
 
-``` bash
-git remote add origin git@github.com:gdiminneapolis/my-awesome-course.git
-```
+8. Create your github repository for this repo: `hub create`. If you
+   don't have `hub` installed, install it. If you can't, follow the
+   direction at Github for
+   [how to create a repository](https://help.github.com/articles/creating-a-new-repository/).
 
-Go ahead and push the current initial version up to your new repo:
+9. Do the initial git dance: `git add --all && git commit -m "initial commit" && git push -u origin master`
 
-``` bash
-git push -u origin HEAD
-```
-
-Initialize **and** update (both) the git submodule(s):
-
-``` bash
-git submodule init
-git submodule update
-```
+10. Right now, create a new branch for working: `git checkout -b dev && git push -u origin dev`
 
 ### Keep Git Up to Date
 
@@ -81,52 +67,48 @@ clean working tree and remote repository. When you want to start off
 on a new feature, or just try something out, create a branch. If it's
 what you want, merge it back in to master.
 
-## Complete Installtion
-
-To complete the installation, run the `bundle install` command. On
-OS/X or Ubuntu, it looks like this:
-
-``` bash
-bundle install
-bundle binstub jekyll
-```
-
 ## Configuration
 
 There are some configuration values to set, which are found in the
-`_config.yml` and `_config_publish.yml` files in the home
+`_config.yml`, `_staging.yml` and `_publish.yml` files in the home
 directory. (See
 [editing yaml files](https://github.com/gdiminneapolis/jekyll-reveal-starter-kit/wiki/Editing-YAML-files)
 in the starter kit wiki.) Edit these files in your code editor and
 change the settings to be what you want.
 
-There are only two settings you must absolutely change:
-
-* `title` - change this to the title of your course
-* `baseurl` - change this to the repository base name
-
-Using the above example, you'd have:
-
-``` yaml
-title: My Awesome Course
-baseurl: /my-awesome-course
-```
-
-(Thus revealing whey the restriction on the name for your repository:
-it's used in the URL for the slide set when published on Github
-pages.)
-
 *Note:* the `baseurl` value **must** begin with a "/" character. Leave
 the end without a "/" character as well.
+
+### `_config.yml`
+
+Obvious things like the title, description, and keywords should be
+changed to fit your new slide set. These appear in the head of the
+documents, and in the default title page of the of the slide set.
+
+Don't touch `baseurl` or `url` in this file. These are the values that
+work with the Jekyll server so you can preview your work.
+
+### `_staging.yml`
+
+This file gets appended to the configuration set when building for
+staging.  In this file, you should set the `url` field by changing the
+`YOUR_GITHUB_ACCOUNT` string to, well, your github account name.
+
+Change `baseurl` to the name of your github repo. Make sure the string
+begins with a forward slash ("/").
+
+### `_publish.yml`
+
+Change the `baseurl` to the name of the github repo as it will be on
+`https://github.com/gdiminneapolis`. If you don't feel comfortable
+doing this, discuss this with at the organization.
 
 ## Spin up the Jekyll Server
 
 Everything should be good to go, now, and you can start up the Jekyll
 development server to show the slides while you create them.
 
-``` bash
-bin/jekyll serve
-```
+    $ rake
 
 You may want to pay attention to the terminal window running the
 server, as that is where errors will be reported in case there's
@@ -144,19 +126,30 @@ page in the browser.
 Slides live in the `_slides` folder, and should be named with the
 following conventions:
 
-* start with a sequence number. By default, I've started the sequence
-  at 000 -- this allows up to 999 slides.
+* start with a sequence number, the slides will be ordered by this
+  sequence number. A good sequencing scheme is `00.00` where the first
+  set of numbers is the class section, and the second set is the
+  slides in that section. Example: `00.00.introduction.html`
 * the slide title, lowercased, only letters, numbers, and dashes --
   use dashes for spaces between words.
-* the extension `.html` (you can edit your slides in Markdown using
-  the `.md` extension.)
+* the extension `.html` (you can also edit your slides in Markdown
+  using the `.md` extension.)
 
 For example, the introduction slide is:
-`_slides/000-introduction.html`.
+`_slides/00.00.introduction.html` and the very last slide would be
+`_slides/99.99.fin.html`.
 
 A very good practice is to leave gaps in the sequence number to make
 it easy to rearrange slides if you want, or insert conent as you'd
 like.
+
+If you need more than 100 sections or more than 100 slides per
+section, make sure your numbering allows this because the system is
+rather stupid about it. Example: `000.001.slide-title.html`. If you do
+think you need this, though, think about restructuring the
+presentation into more than one slide set. You can create new
+collections, for example, and have a root `.html` file for each
+collection.
 
 ## Slide Content
 
@@ -169,9 +162,27 @@ Every slide needs to have at least the following frontmatter:
 ``` yaml
 ---
 layout: slide
-title: Slide Title
 ---
 ```
+
+You can also put other meta data in the frontmatter. A useful one is the slide's title:
+
+``` yaml
+---
+layout: slide
+title: Let's Develop It!
+---
+```
+
+And you can use the title in the body with a little Liquid:
+
+``` html
+<h1>{{ page.title }}</h1>
+```
+
+This comes in very handy when there are multiple `section`s in the
+slide to put the title on each `section`.
+
 
 ### Slide Body
 
@@ -189,6 +200,7 @@ For example, the standard "Welcome" slide has the following content:
 layout: slide
 title: "Welcome!"
 ---
+<h1>{{ page.title }}</h1>
 <div class="left-align">
   <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
   <p class="green">Some "rules"</p>
@@ -199,6 +211,7 @@ title: "Welcome!"
     <li>Have fun</li>
   </ul>
 </div>
+
 ```
 
 which should be pretty easy to figure out.
@@ -211,104 +224,56 @@ a good presentation practice, but a lot of people seem to use it.)
 
 ### Code Snippets
 
-Since we're all about the code, you can place snippets on the slide by
-wrapping them with `<pre><code>` elements. These will be nicely
-formatted and syntax highlighted. To tell the highlighter what
-language syntax to use, give the `<code>` tag the appropriate `class`
-attribute:
+Since we're all about the code, you can place code snippets on the slide using Jekyll's `highlight` feature:
 
 ``` html
-<pre>
-  <code class="css">
-    h1 {
-      font-weight: bold;
-      text-size: 120%;
-    }
-  </code>
-</pre>
+Here's an example:
+
+{% highlight html linenos %}
+<div class="introduction">
+  <h1>Introduction</h1>
+  <ul>
+    <li>My Life</li>
+  </ul>
+</div>
+{% endhighlight %}
 ```
 
 Make sure to keep your snippets short, so they stay on the slide
 nicely.
 
-### Helper Classes
+### Helper and Override Classes
 
-`reveal.js` seems to shorten boxes on some blocks, making ridiculous
-line breaks when the text would look a lot better all on one line.
+There are several helper and override classes defined in `_sass/_overrides.scss`. Please feel free to add to this for your own work. You can add more Sass partials to the `_sass/` directory as well, just make sure they get `@import`ed in `css/main.scss`.
 
-There are two helpers for this:
+### JavaScripts
 
-* `go-wide` - sets the box width to 960px
-* `no-wrap` - forces the contents to never wrap on white spaces
+The `js/` directory holds the scripts you can change, or add your own. If you add new script files, make sure the add them in `_includes/scripts.html` as well. Follow the pattern used there for `revealConfig.js`.
 
 ## Build the Presentation
 
 To build the slide presentation for publication, *stop* the running
-`jekyll` server. Then at the command line, enter:
+`jekyll` server with `ctrl-C`. Then at the command line, enter:
 
 ``` bash
-bin/jekyll build --config=_config.yml,_config_publish.yml
+rake staging:build
 ```
 
 This will build the presentation into the `_site` folder. You can open
 the presentation from there to see if it's as you want.
 
-## Publish the Presentation
+## Staging the Presentation
 
 By default, everything we've done will allow us to easily publish
-slides and notes on Github pages. Follow these steps.
+slides and notes on your repo's Github pages. This is where you'll
+"stage" the presentation to allow other folks to review it as slides
+and give feedback.
 
-### First time only
+    $ rake staging:push
 
-We'll need the URL of the git remote origin (where we have been saving
-the slides). The following command on OS/X or Ubuntu will save it in a
-bash variable:
+You can run both the staging build and push task with just:
 
-``` bash
-ORG=$(git remote -v | grep origin | head -1 | awk '{print $2}')
-```
-
-Next, descend into the `_site` folder and run `git init`
-
-``` bash
-cd _site
-git init
-```
-
-Add the remote:
-
-``` bash
-git remote add origin $ORG
-```
-
-Set the branch to `gh-pages`:
-
-``` bash
-git checkout -b gh-pages
-```
-
-Now, add all the file, commit them, and push them up to the remote:
-
-``` bash
-git add --all -v
-git commit -m "publish"
-git push -u origin HEAD
-```
-
-After a couple minutes, your site will be available on Github.
-
-### Every time you want to publish
-
-Most of the previous steps settings will be intact in the `_site`
-folder, so you should only need to do the following:
-
-``` bash
-cd _site
-git add --all -v
-git commit -m "publish"
-git push -u origin HEAD
-cd ..
-```
+    $ rake staging
 
 ## Contributing
 

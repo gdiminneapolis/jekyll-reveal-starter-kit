@@ -10,9 +10,6 @@
 # prefix, and the baseurl setting in _config.yml
 # for the repository name.
 url: "https://gdiminneapolis.github.io"
-
-# If you fork something from the GDIMpls repo into your own repo, and
-# use the same publish to Github track, your version will be availble
-# at the url "https://<yourgithub>.github.io/<repo-name/". This could
-# generate some confusion when contributing to the GDIMpls
-# repo. **BEWARE**
+# Change this to the name of your repository. Make sure it starts with a forward slash "/"
+baseurl: "/jekyll-reveal-starter-kit"
+destination: "_publish"
