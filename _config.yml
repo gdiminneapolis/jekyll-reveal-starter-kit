@@ -1,9 +1,4 @@
-# You *MUST* change these two items:
 title: Your Awesome Class
-baseurl: "/jekyll-reveal-starter-kit"
-# ^ This is the path of the slide set below the site URL.
-
-# These are things you should customize for your class
 author: Your Name
 description: |
   Your awesome class in all it's glory.
@@ -23,6 +18,8 @@ contact:
   github: "gdiminneapolis"
 
 
+reveal_path: "/reveal.js"
+
 # There are a handful of styles available with reveal. They can be found in the
 # reveal.js/css/themes folder, and include:
 #
@@ -32,14 +29,6 @@ contact:
 # style: gdisunny
 # style: simple
 style: gdidefault
-
-# Similarly, syntax highlighting styles are available in reveal. They can be found
-# in the reveals.js/lib/ folder, and include:
-#
-# syntax_style: dark.css
-# syntax_style: light.css
-# syntax_style: zenburn.css
-syntax_style: zenburn
 
 # This is where your slides will be found, in the _slides/ folder.
 # Number them in sequence
@@ -55,3 +44,7 @@ exclude:
   - LICENSE
   - Outline.md
   - README.md
+
+# Don't change these. Change values in _staging.yml and _publish.yml appropriately.
+baseurl: ""
+url: ""

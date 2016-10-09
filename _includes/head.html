@@ -1,0 +1,20 @@
+<head>
+  <meta charset="utf-8">
+
+  <title>{{ site.title }}</title>
+
+  <meta name="description" content="{{site.description}}">
+  <meta name="author" content="{{site.author}}">
+  <meta name="keywords" content="{{site.keywords | join: ", "}}">
+
+  <link rel="stylesheet" href="{{ "/css/reveal.css" | prepend: site.reveal_path | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ site.style | prepend: "/css/theme/" | prepend: site.reveal_path | prepend: site.baseurl }}.css" id="theme">
+  <link rel="stylesheet" href="{{ site.stylesheet | prepend: site.baseurl }}" media="screen" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <link rel="icon" type="{{ "image/x-icon" | prepend: site.baseurl }}" href="favicon.ico"/>
+  <!--[if lt IE 9]>
+      <script src="{{ "lib/js/html5shiv.js" | prepend: site.baseurl }}"></script>
+      <![endif]-->
+</head>
