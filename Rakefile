@@ -3,13 +3,13 @@ require 'erb'
 
 desc "jekyll server with full build"
 task :server do |t|
-  sh "bin/jekyll serve --port #{ENV["JEKYLL_PORT"]}"
+  sh "bundle exec jekyll serve --port #{ENV["JEKYLL_PORT"]}"
 end
 task :default => :server
 
 desc "jekyll server with incremental build"
 task :server_inc do |t|
-  sh "bin/jekyll serve --incremental --port #{ENV["JEKYLL_PORT"]}"
+  sh "bundle exec jekyll serve --incremental --port #{ENV["JEKYLL_PORT"]}"
 end
 
 desc "build and push to staging"
@@ -19,7 +19,7 @@ namespace :stage do
   desc "build staging"
   task :build do |t|
     puts "Staging baseurl: #{jekyll_staging_config["baseurl"]}"
-    sh "bin/jekyll build --config=_config.yml,_staging.yml"
+    sh "bundle exec jekyll build --config=_config.yml,_staging.yml"
   end
   desc "push staging"
   task :push do |t|
@@ -38,7 +38,7 @@ task :publish => ['publish:build', 'publish:push']
 namespace :publish do
   desc "build production"
   task :build do |t|
-    sh "bin/jekyll build --config=_config.yml,_publish.yml"
+    sh "bundle exec jekyll build --config=_config.yml,_publish.yml"
   end
   desc "push to production"
   task :push do |t|
