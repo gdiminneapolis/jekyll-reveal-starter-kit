@@ -1,0 +1,31 @@
+{
+  "name": "jekyll-reveal-starter-kit",
+  "version": "2.0.0",
+  "description": "A starting point for developing GDI Minneapolis class slides using reveal.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdiminneapolis/jekyll-reveal-starter-kit.git"
+  },
+  "keywords": [
+    "GDI",
+    "GDIMinneapolis",
+    "reveal",
+    "jekyll",
+    "starterKit"
+  ],
+  "author": "Tamara Temple <tamouse@gmail.com>",
+  "license": "CC-BY-NC-3.0",
+  "bugs": {
+    "url": "https://github.com/gdiminneapolis/jekyll-reveal-starter-kit/issues"
+  },
+  "homepage": "https://github.com/gdiminneapolis/jekyll-reveal-starter-kit#readme",
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-task-listing": "^1.0.1"
+  }
+}

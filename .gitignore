@@ -1,5 +1,6 @@
 _site
 .sass-cache
 .jekyll-metadata
-/Gemfile.lock
-bin/
+Gemfile.lock
+.idea
+node_modules

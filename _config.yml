@@ -38,12 +38,18 @@ collections:
 exclude:
   - bin
   - CONTRIBUTOR_COVENANT.md
+  - DETAILS-README.md
   - Description.md
   - Gemfile
   - Gemfile.lock
+  - gulpfile.js
   - LICENSE
   - Outline.md
+  - package.json
+  - Rakefile
   - README.md
+  - setup.sh
+  - WINDOWS-README.md
 
 # Don't change these. Change values in _staging.yml and _publish.yml appropriately.
 reveal_path: "/reveal.js"
