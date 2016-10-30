@@ -33,7 +33,7 @@ if you are using Ruby version 2.3.1, you need to download this file:
 Assuming you save it to your `Downloads` folder, then from the 
 command line, run:
 
-    gem install --local C:\Users\YOURUSER\rubygems-update-2.6.7.gem
+    gem install --local C:\Users\YOURUSER\Downloads\rubygems-update-2.6.7.gem
 
 substituting your actual user name for 'YOURUSER' of course.
 
@@ -54,6 +54,18 @@ Install some packages globally:
 
 * gulp
 
+## Installing the starter kit
+
+Find a place where your new class project can live, and unzip the
+starter kit `.zip` file to that point.
+
+Rename the starter kit to the "slug" of your class -- use the name 
+of your class, but use all lower case letters and substitute dashes
+for any spaces. Don't put in any other punctuation.
+
+Now open a Command or Git-Bash prompt and navigate to your class
+folder.
+
 ## Initializing the project
 
 Instead of just using Ruby, Windows users also have to use Node.js. 
@@ -64,13 +76,14 @@ a `bat` or powershell script!)
 
 ### initialize the local repository
 
-    $ git init
+    git init
     
-### add the reveal.js submodule
+### attach the reveal.js submodule
 
-    $ git submodule add https://github.com/gdiminneapolist/reveal.js.git reveal.js
+    rmdir reveal.js
+    git submodule add https://github.com/gdiminneapolis/reveal.js.git reveal.js --force
 
-### Install all the rest of the project Ruby neeeds:
+### Install all the rest of the project Ruby needs:
 
     bundle install
 
