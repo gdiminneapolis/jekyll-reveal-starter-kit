@@ -33,7 +33,7 @@ installed:
 gem install bundler
 ```
 
-* [Hub](https://github.com/github/hub#installation)
+* [Hub](https://github.com/github/hub#installation) if you are on a Mac
 
 
 
@@ -49,16 +49,13 @@ gem install bundler
 
 5. Change into the new directory.
 
-7. Run the setup script: `./setup.sh`
+7. Run the setup script: `./setup.sh` on a Mac or Linux. We have to do something else on Windows.
 
-8. Create your github repository for this repo: `hub create`. If you
-   don't have `hub` installed, install it. If you can't, follow the
-   direction at Github for
-   [how to create a repository](https://help.github.com/articles/creating-a-new-repository/).
+8. Create your github repository for this repo.
 
-9. Do the initial git dance: `git add --all && git commit -m "initial commit" && git push -u origin master`
+9. Add and commit all the files to master. Push to the remote when satisfied.
 
-10. Right now, create a new branch for working: `git checkout -b dev && git push -u origin dev`
+10. Right now, create a new branch for working on the slides and push that to the remote as well.
 
 ### Keep Git Up to Date
 
@@ -105,6 +102,8 @@ doing this, discuss this with at the organization.
 
 ## Spin up the Jekyll Server
 
+**NOTE** that the jekyll `--watch` option does **not** work on Windows. We have to do something else to make a convenient watching/viewing-as-you-save-changes thing.
+
 Everything should be good to go, now, and you can start up the Jekyll
 development server to show the slides while you create them.
 
@@ -140,7 +139,7 @@ For example, the introduction slide is:
 `_slides/99.99.fin.html`.
 
 A very good practice is to leave gaps in the sequence number to make
-it easy to rearrange slides if you want, or insert conent as you'd
+it easy to rearrange slides if you want, or insert content as you'd
 like.
 
 If you need more than 100 sections or more than 100 slides per
@@ -308,7 +307,7 @@ Non-commercial 3.0 Unported (CC BY-NC 3.0)
 
 * The
   [Jekyll team](https://github.com/jekyll/jekyll/graphs/contributors),
-  especiall parkr
+  especially parkr
 
 * [Hakim El Hattab](https://github.com/hakimel), creator of
   `reveal.js`
