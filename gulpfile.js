@@ -13,7 +13,7 @@ gulp.task('build', function () {
     //return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'});
     return cp.execSync('bundle exec jekyll build', {stdio: 'inherit'})
 });
-gulp.task('serve', function(){
+gulp.task('serve', ['build'], function(){
     "use strict";
     sync.init({
         server: './_site'
