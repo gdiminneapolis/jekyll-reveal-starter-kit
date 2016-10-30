@@ -118,4 +118,20 @@ where 'GITURL' is the remote site's git-based url.
 ### Commit the initial version before doing anything else!
 
     git add --all --verbose
-    git commit 
+    git commit -m "Initial Commit"
+    git push -u origin master
+    git checkout -b dev
+    git push -u origin dev
+
+Now you'll be working on the `dev` branch, and when you're ready
+you can merge that back into master.
+
+## Working on the slides
+
+Run the command:
+
+    gulp serve
+
+and you can edit your slides as you'd like and see the changes
+reflected in the browser. When you save them.
+
