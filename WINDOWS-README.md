@@ -1,18 +1,18 @@
 # Instructions for Windows Users
 
-These are additional instructions for those of you who run on Windows, 
+These are additional instructions for those of you who run on Windows,
 and the commands don't quite work.
 
 ## Prerequisites
 
 ### Ruby
 
-Ruby in general presents a few problems on Windows, but most are 
+Ruby in general presents a few problems on Windows, but most are
 surmountable.
 
 #### Getting Ruby
 
-Install latest ruby **and** devkit from http://rubyinstaller.com. 
+Install latest ruby **and** devkit from http://rubyinstaller.com.
 Follow the instructions on that site.
 I suggest you install the devkit in `C:\RubyDekKit`.
 Make sure to both initialize and install the devkit.
@@ -30,7 +30,7 @@ if you are using Ruby version 2.3.1, you need to download this file:
 
     https://rubygems.org/gems/rubygems-update-2.6.7.gem
 
-Assuming you save it to your `Downloads` folder, then from the 
+Assuming you save it to your `Downloads` folder, then from the
 command line, run:
 
     gem install --local C:\Users\YOURUSER\Downloads\rubygems-update-2.6.7.gem
@@ -59,7 +59,7 @@ Install some packages globally:
 Find a place where your new class project can live, and unzip the
 starter kit `.zip` file to that point.
 
-Rename the starter kit to the "slug" of your class -- use the name 
+Rename the starter kit to the "slug" of your class -- use the name
 of your class, but use all lower case letters and substitute dashes
 for any spaces. Don't put in any other punctuation.
 
@@ -68,20 +68,20 @@ folder.
 
 ## Initializing the project
 
-Instead of just using Ruby, Windows users also have to use Node.js. 
-In addition, the `setup.sh` script does not work on windows, 
-so the steps need to be done manually. 
-(At least until someone [contributes](CONTRIBUTING_GUIDELINES.md) 
+Instead of just using Ruby, Windows users also have to use Node.js.
+In addition, the `setup.sh` script does not work on windows,
+so the steps need to be done manually.
+(At least until someone [contributes](CONTRIBUTING_GUIDELINES.md)
 a `bat` or powershell script!)
 
 ### initialize the local repository
 
     git init
-    
+
 ### attach the reveal.js submodule
 
     rmdir reveal.js
-    git submodule add https://github.com/gdiminneapolis/reveal.js.git reveal.js --force
+    git submodule add --force https://github.com/gdiminneapolis/reveal.js.git reveal.js
 
 ### Install all the rest of the project Ruby needs:
 
@@ -107,14 +107,14 @@ in the browser.
 
 ## Creating the new slide repository on Github
 
-While Mac users get to work with `hub`, Windows users have to do things 
-the old-fashioned way by creating the empty repository on GitHub and 
+While Mac users get to work with `hub`, Windows users have to do things
+the old-fashioned way by creating the empty repository on GitHub and
 setting the remote origin by hand.
 
-GUI tools such as Github Desktop for Windows or Sourcetree can help if 
+GUI tools such as Github Desktop for Windows or Sourcetree can help if
 you are uncomfortable using the GitBash shell.
 
-See [Create a Repo](https://help.github.com/articles/create-a-repo/) on 
+See [Create a Repo](https://help.github.com/articles/create-a-repo/) on
 GitHub for help with creating the remote repository.
 
 ### Setting the remote origin
@@ -147,4 +147,3 @@ Run the command:
 
 and you can edit your slides as you'd like and see the changes
 reflected in the browser. When you save them.
-
