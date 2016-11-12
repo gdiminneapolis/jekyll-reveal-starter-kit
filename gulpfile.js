@@ -13,9 +13,9 @@ gulp.task('build', function () {
     return cp.execSync('bundle exec jekyll build', {stdio: 'inherit'})
 });
 gulp.task('serve', ['build'], function(){
-    sync.init({server: './_site'});
-    gulp.watch(['./source/**/*'],
-   ['build'])
+  sync.init({server: './_site'});
+  gulp.watch('./source/**/*', ['build'])
+  gulp.watch('./_site/**/*').on('change', sync.reload)
 });
 
 gulp.task('stage', function () {

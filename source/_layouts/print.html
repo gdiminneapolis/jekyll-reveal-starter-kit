@@ -1,24 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-
-    <title>{{ site.title }}</title>
-
-    <meta name="description" content="{{site.description}}">
-    <meta name="author" content="{{site.author.name}}">
-    <meta name="keywords" content="{{site.keywords | join: ", "}}" />
-    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | prepend: site.baseurl }}"/>
-    <!--[if lt IE 9]>
-	<script src="{{ "lib/js/html5shiv.js" | prepend: site.baseurl }}"></script>
-	<![endif]-->
-    <style>
-      body { width: 960px; margin: 20px auto; }
-      aside { font-style: italic; margin-left: 100px; color: gray; }
-      img.logo { width: 100px; }
-    </style>
-  </head>
+  {% include print/head.html %}
   <body>
     {{ content }}
+    {% include print/foot.html %}
   </body>
 </html>

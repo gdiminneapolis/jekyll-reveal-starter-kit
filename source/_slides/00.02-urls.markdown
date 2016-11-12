@@ -1,0 +1,16 @@
+---
+layout: slide
+title: "URLs for Slides, Examples, Etc"
+---
+
+### {{ page.title }}
+
+* [Slides]({{ 'index.html' | relative_url }} ){:target="_blank"}
+* [Print&nbsp;Notes]({{ 'print.html' | relative_url}} ){:target="_blank"}
+
+
+These URLs will not become live until you've published
+the slide deck where it's supposed to go. See the README.md
+for instructions on publishing the site to the repo's
+Github pages.
+{:.notes}

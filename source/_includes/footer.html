@@ -1,11 +1,11 @@
 <footer>
   <div class="copyright">
-    <a href="{{site.url | append: site.baseurl}}">{{site.title}}</a>
+    {% for tweet_tag in site.tweet_tags %}
+    <a href="{{ tweet_tag.href }}" target="_blank">
+      {{ tweet_tag.text}}
+    </a>
     &bullet;
-    <a href="{{site.contact.web}}">{{site.contact.name}}</a>
-    &bullet;
-    <a href="http://twitter.com/{{site.contact.twitter}}">@{{site.contact.twitter}}</a>
-    &bullet;
+    {% endfor %}
     <a rel="license" href="//creativecommons.org/licenses/by-nc/3.0/deed.en_US">
       <img
 	 alt="Creative Commons License" style="border-width:0"

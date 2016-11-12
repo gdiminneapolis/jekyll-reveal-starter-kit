@@ -1,5 +1,42 @@
+$spacing: 10px;
+
+@mixin clearfix {
+  &:before, &:after {
+	      content: ' ';
+	      display: table;
+	    }
+  &:after {
+    clear: both;
+  }
+}
+
+
 .reveal {
+  h1, h2, h3, h4, h5, h6 { text-transform: inherit; } // get rid of that horrid uppercase
+
+  img.logo {
+    width: 25%;
+  }
+  img.img-responsive {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    text-align: center;
+  }
   .notes {display: none;}
   .go-wide {width: 960px}
   .nowrap { white-space: nowrap}
+
+  .side-by-side {
+    $side-by-side-width: 960px;
+
+    width: $side-by-side-width;
+    .left-side, .right-side {
+      display: inline-block;
+      width: ($side-by-side-width / 2) - $spacing;
+      vertical-align: top;
+    }
+
+    @include clearfix;
+  }
 }

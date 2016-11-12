@@ -17,6 +17,17 @@ contact:
   twitter: "gdimpls"
   github: "gdiminneapolis"
 
+# Replace <HASHTAG> with something appropriate for your course, like #LearnJS or #IntroToPython
+# Replace <AUTHOR> with your twitter handle
+# use other twitter tags as you'd like
+tweet_tags:
+  - href: "https://twitter.com/search?q=%23<HASHTAG>&src=typd"
+    text: "#<HASHTAG>"
+  - href: "https://twitter.com/<AUTHOR>"
+    text: "@<AUTHOR>"
+  - href: "https://twitter.com/gdimpls"
+    text: "@GDIMpls"
+
 
 # There are a handful of styles available with reveal. They can be found in the
 # reveal.js/css/themes folder, and include:

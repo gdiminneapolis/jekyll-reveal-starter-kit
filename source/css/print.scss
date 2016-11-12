@@ -1,0 +1,10 @@
+---
+---
+
+body { width: 960px; margin: 20px auto; font-size: 1.1em; }
+section { padding: 1em; border: 1px solid black; }
+img.logo { width: 10%; }
+.notes { padding: 1em;  }
+.no-print { display: none; }
+
+@import "highlight_syntax"
