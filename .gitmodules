@@ -1,0 +1,3 @@
+[submodule "source/reveal.js"]
+	path = source/reveal.js
+	url = https://github.com/gdiminneapolis/reveal.js.git

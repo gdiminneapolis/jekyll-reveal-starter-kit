@@ -9,3 +9,4 @@
 url: "https://YOUR_GITHUB_ACCOUNT.github.io"
 # Change this to the name of your repository. Make sure it starts with the forward slash "/"
 baseurl: "/jekyll-reveal-starter-kit"
+destination: docs

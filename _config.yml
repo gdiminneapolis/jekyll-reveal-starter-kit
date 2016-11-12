@@ -33,19 +33,8 @@ style: gdidefault
 collections:
   - slides
 
-# If you create other files or folders that you do NOT want as part of the slide presentation
-# include them in this list.
-exclude:
-  - bin
-  - CONTRIBUTOR_COVENANT.md
-  - Description.md
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - Outline.md
-  - README.md
-
 # Don't change these. Change values in _staging.yml and _publish.yml appropriately.
+source: source
 reveal_path: "/reveal.js"
 baseurl: ""
 url: ""

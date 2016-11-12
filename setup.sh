@@ -2,8 +2,8 @@
 
 git init
 
-rm -rf .gitmodules reveal.js
-git submodule add --force https://github.com/gdiminneapolis/reveal.js.git reveal.js
+git rm -rf source/reveal.js
+git submodule add --force https://github.com/gdiminneapolis/reveal.js.git source/reveal.js
 
 bundle install
 bundle binstub jekyll
