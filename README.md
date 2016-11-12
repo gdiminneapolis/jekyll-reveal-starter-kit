@@ -215,11 +215,48 @@ title: "Welcome!"
 
 which should be pretty easy to figure out.
 
+Note that slides can also be in MarkDown form. Use the `.md` or
+`.markdown` extension instead of `.html`.
+
+```markdown
+---
+layout: slide
+title: "Welcome!"
+---
+
+# {{page.title}}
+
+<div class="left-align">
+
+Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.
+
+Some "rules":
+{:.green}
+
+* We are here for you!
+* Every question is important
+* Help each other
+* Have fun
+{:.go-wide}
+
+</div>
+```
+
+
 ### Fragments
 
-If you want a slide to load in fragments, each `<section>` element you
-put in the slide body will be loaded with each step. (Not necessarily
-a good presentation practice, but a lot of people seem to use it.)
+Using the class `.fragment` on an element will cause that element to
+be loaded after the slide loads, like slide ups in powerpoint.
+
+### Mulitple-page Slides
+
+You can have slides roll up as well as over by making sub `<section>`
+elements in the slide body.
+
+This might make navigating confusing for some, however, since they
+may not realize they have to press the down key instead of the right
+key. If they using the space bar to navigate from slide to slide,
+they'll get them in the right order.
 
 ### Code Snippets
 
@@ -254,14 +291,17 @@ The `js/` directory holds the scripts you can change, or add your own. If you ad
 To build the slide presentation for publication, *stop* the running
 `jekyll` server with `ctrl-C`. Then at the command line, enter:
 
-``` bash
-rake staging:build
-```
 
-This will build the presentation into the `_site` folder. You can open
+    $ rake staging:build
+
+or
+
+    $ rake publish:build
+
+This will build the presentation into the `docs` folder. You can open
 the presentation from there to see if it's as you want.
 
-## Staging the Presentation
+## Staging and Publishing the Presentation
 
 By default, everything we've done will allow us to easily publish
 slides and notes on your repo's Github pages. This is where you'll

@@ -12,4 +12,4 @@
 url: "https://gdiminneapolis.github.io"
 # Change this to the name of your repository. Make sure it starts with a forward slash "/"
 baseurl: "/jekyll-reveal-starter-kit"
-destination: "_publish"
+destination: "docs"
