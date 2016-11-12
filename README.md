@@ -39,30 +39,24 @@ gem install bundler
 
 ## Starter Kit Installation
 
-1. Download the zipped source files from github at `https://github.com/gdiminneapolis/jekyll-reveal-starter-kit/archive/master.zip` and save it someplace memorable.
+1. [Fork](https://help.github.com/articles/fork-a-repo/ "Forking a
+    Repo on GitHub") the starter kit into your GitHub account
 
-2. Create and/or go to the parent directory for your new slide set.
+2. [Rename](https://help.github.com/articles/renaming-a-repository/
+   "Renaming a GitHub repository")
 
-3. Unzip the zipped source you downloaded into the parent directory.
+3. In the repo's `Settings` area, set the "GitHub Pages" section to
+   use "master branch /docs folder" if it isn't already set to that.
 
-4. Rename the newly created directory to the name you want for your Github repository.
+3. [Download or Clone](https://help.github.com/articles/cloning-a-repository/
+   "Clone a repository from GitHub")
 
-5. Change into the new directory.
+3. `cd` into the local repo you just cloned
 
-7. Run the setup script: `./setup.sh` on a Mac or Linux. We have to do something else on Windows.
+4. Run the `setup.sh` script
 
-8. Create your github repository for this repo.
-
-9. Add and commit all the files to master. Push to the remote when satisfied.
-
-10. Right now, create a new branch for working on the slides and push that to the remote as well.
-
-### Keep Git Up to Date
-
-Like with any other project, use git's features to maintain a good
-clean working tree and remote repository. When you want to start off
-on a new feature, or just try something out, create a branch. If it's
-what you want, merge it back in to master.
+5. Modify the files `_staging.yml` and `_publish.yml` to fit your
+   repo's needs.
 
 ## Configuration
 
@@ -292,27 +286,29 @@ To build the slide presentation for publication, *stop* the running
 `jekyll` server with `ctrl-C`. Then at the command line, enter:
 
 
-    $ rake staging:build
+    $ rake staging
 
 or
 
-    $ rake publish:build
+    $ rake publish
 
 This will build the presentation into the `docs` folder. You can open
 the presentation from there to see if it's as you want.
 
-## Staging and Publishing the Presentation
+## Publishing
 
-By default, everything we've done will allow us to easily publish
-slides and notes on your repo's Github pages. This is where you'll
-"stage" the presentation to allow other folks to review it as slides
-and give feedback.
+With the new Github pages feature of serving from the master's `docs/`
+folder, all the worry about setting up a special `gh-pages` branch and
+tweaking the local build destination has gone away. After the above
+build step, just add, commit, push the changes **including the `docs/`
+folder** to the remote repo.
 
-    $ rake staging:push
+### Keep Git Up to Date
 
-You can run both the staging build and push task with just:
-
-    $ rake staging
+Like with any other project, use git's features to maintain a good
+clean working tree and remote repository. When you want to start off
+on a new feature, or just try something out, create a branch. If it's
+what you want, merge it back in to master.
 
 ## Contributing
 
