@@ -9,14 +9,16 @@ task :server_inc do |t|
   sh "bundle exec jekyll serve --incremental --port #{jekyll_port}"
 end
 
-desc "build for staging"
-task :staging do |t|
-  sh "bundle exec jekyll build --config=_config.yml,_staging.yml"
-end
+namespace :build do
+  desc "build for staging"
+  task :staging do |t|
+    sh "bundle exec jekyll build --config=_config.yml,_staging.yml"
+  end
 
-desc "build for publishing"
-task :staging do |t|
-  sh "bundle exec jekyll build --config=_config.yml,_publish.yml"
+  desc "build for publishing"
+  task :publish do |t|
+    sh "bundle exec jekyll build --config=_config.yml,_publish.yml"
+  end
 end
 
 def jekyll_port
